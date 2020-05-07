@@ -1,3 +1,4 @@
 *.n5
 software/
 __pycache__/
+tmp*/

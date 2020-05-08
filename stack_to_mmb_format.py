@@ -30,6 +30,10 @@ def stack_to_mmb(input_folder, dataset_name, resolution, target, max_jobs):
     initialize_image_dict(output_folder, xml_path)
     initialize_bookmarks(output_folder)
 
+    # TODO we should also compute a foreground/background mask right away like so:
+    # - threshold the data at background value (0?) on suitable downsampled level
+    # - compute connected components and keep only the largest background component
+
     # register this stack in versions.json
     add_version(dataset_name, ROOT)
 
@@ -38,10 +42,11 @@ def stack_to_mmb(input_folder, dataset_name, resolution, target, max_jobs):
 def get_resolution(resolution, name):
     if resolution is None:
         # TODO we need the exact 5nm identifier in the filename
-        if '' in name:
-            resolution = [0.005, 0.005, 0.005]
-        else:
-            resolution = [0.008, 0.008, 0.008]
+        # if '' in name:
+        #     resolution = [0.005, 0.005, 0.005]
+        # else:
+        #     resolution = [0.008, 0.008, 0.008]
+        resolution = [0.008, 0.008, 0.008]
     return resolution
 
 
@@ -57,4 +62,5 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     resolution = get_resolution(args.resolution, args.name)
+    print("Resolution:", resolution)
     stack_to_mmb(args.input_folder, args.name, resolution, args.target, args.max_jobs)

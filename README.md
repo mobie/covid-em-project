@@ -2,7 +2,12 @@
 
 ## Set-up
 
-TODO set up local env with all necessary dependencies to run the scripts.
+I have set up a conda environment with all necessary dependencies in `software/miniconda`.
+You can activate it by running:
+```shell
+source software/run_conda.sh
+conda activate mmb-dev
+```
 
 
 ## Usage

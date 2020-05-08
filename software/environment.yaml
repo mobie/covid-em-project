@@ -1,0 +1,19 @@
+name:
+    mmb-dev
+channels:
+    - conda-forge
+    - cpape
+dependencies:
+    - napari
+    - nifty >=v1.0.7
+    - paintera_tools >=0.2.2,<0.3.0
+    - pandas
+    - pybdv >=0.4.1,<0.5.0
+    - s3fs
+    - scikit-image
+    - scikit-learn
+    - xtensor-python
+    - nlohmann_json
+    - mahotas
+    - vigra
+    - h5py

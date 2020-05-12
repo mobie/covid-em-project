@@ -3,9 +3,21 @@ import os
 
 # NOTE: I will refactor this into https://github.com/platybrowser/mmb-python eventually
 from mmpb.release_helper import add_version, make_folder_structure
+from mmpb.files.xml_utils import write_s3_xml
 from mmb_utils import export_image_stack, initialize_image_dict, initialize_bookmarks
 
 ROOT = './data'
+
+
+def add_xml_for_s3(xml_path, data_path):
+    bucket_name = 'covid-fib-sem'
+    xml_out_path = xml_path.replace('local', 'remote')
+
+    path_in_bucket = os.path.relpath(data_path, start=ROOT)
+    write_s3_xml(xml_path, xml_out_path, path_in_bucket,
+                 bucket_name=bucket_name)
+
+    # TODO upload to bucket via mc
 
 
 def stack_to_mmb(input_folder, dataset_name, resolution, target, max_jobs):
@@ -29,6 +41,9 @@ def stack_to_mmb(input_folder, dataset_name, resolution, target, max_jobs):
     xml_path = os.path.splitext(out_path)[0] + '.xml'
     initialize_image_dict(output_folder, xml_path)
     initialize_bookmarks(output_folder)
+
+    # TODO double check that this works
+    add_xml_for_s3(xml_path)
 
     # TODO we should also compute a foreground/background mask right away like so:
     # - threshold the data at background value (0?) on suitable downsampled level

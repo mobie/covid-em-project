@@ -17,7 +17,10 @@ def add_xml_for_s3(xml_path, data_path):
     write_s3_xml(xml_path, xml_out_path, path_in_bucket,
                  bucket_name=bucket_name)
 
-    # TODO upload to bucket via mc
+    print("In order to add the data to the EMBL S3, please run the following command:")
+    full_s3_path = f'embl/{bucket_name}/{path_in_bucket}'
+    mc_command = f"mc cp -r {os.path.relpath(data_path)}/ {full_s3_path}/"
+    print(mc_command)
 
 
 def stack_to_mmb(input_folder, dataset_name, resolution, target, max_jobs):

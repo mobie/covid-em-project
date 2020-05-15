@@ -23,6 +23,7 @@ def add_xml_for_s3(xml_path, data_path):
     print(mc_command)
 
 
+# FIXME if this is called multiple times, it will replicate fields in the xml
 def stack_to_mmb(input_folder, dataset_name, resolution, target, max_jobs):
     assert os.path.exists(input_folder), input_folder
 

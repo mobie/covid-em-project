@@ -7,23 +7,7 @@
           <id>0</id>
           <name>0</name>
         </Channel>
-        <Channel>
-          <id>0</id>
-          <name>0</name>
-        </Channel>
       </Attributes>
-      <ViewSetup>
-        <id>0</id>
-        <name>Setup0</name>
-        <size>3864 3144 4824</size>
-        <voxelSize>
-          <unit>micrometer</unit>
-          <size>0.008 0.008 0.008</size>
-        </voxelSize>
-        <attributes>
-          <channel>0</channel>
-        </attributes>
-      </ViewSetup>
       <ViewSetup>
         <id>0</id>
         <name>Setup0</name>
@@ -49,11 +33,6 @@
     </ImageLoader>
   </SequenceDescription>
   <ViewRegistrations>
-    <ViewRegistration setup="0" timepoint="0">
-      <ViewTransform type="affine">
-        <affine>0.008 0.0 0.0 0.0 0.0 0.008 0.0 0.0 0.0 0.0 0.008 0.0</affine>
-      </ViewTransform>
-    </ViewRegistration>
     <ViewRegistration setup="0" timepoint="0">
       <ViewTransform type="affine">
         <affine>0.008 0.0 0.0 0.0 0.0 0.008 0.0 0.0 0.0 0.0 0.008 0.0</affine>

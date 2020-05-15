@@ -42,8 +42,7 @@ def stack_to_mmb(input_folder, dataset_name, resolution, target, max_jobs):
     initialize_image_dict(output_folder, xml_path)
     initialize_bookmarks(output_folder)
 
-    # TODO double check that this works
-    add_xml_for_s3(xml_path)
+    add_xml_for_s3(xml_path, out_path)
 
     # TODO we should also compute a foreground/background mask right away like so:
     # - threshold the data at background value (0?) on suitable downsampled level

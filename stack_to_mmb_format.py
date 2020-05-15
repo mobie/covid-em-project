@@ -35,25 +35,26 @@ def stack_to_mmb(input_folder, dataset_name, resolution, target, max_jobs):
 
     # convert tif stack to bdv.n5 format
     # NOTE: the file name still needs to be in the platy naming scheme.
-    # @tischi and me need to update this eventually
+    # @Tischi and me need to update this eventually
     out_path = os.path.join(output_folder, 'images', 'local', 'sbem-6dpf-1-whole-raw.n5')
+
+    # TODO we should also compute a foreground/background mask
+    # @julian, we could just use what you are doing to invert the bg values
+    # then we could also do the inversion on the fly here
 
     export_image_stack(input_folder, out_path, tmp_folder, resolution,
                        target=target, max_jobs=max_jobs)
 
-    # initialize the image dict and bookmarks
     xml_path = os.path.splitext(out_path)[0] + '.xml'
+    add_xml_for_s3(xml_path, out_path)
+
+    # initialize the image dict and bookmarks
     initialize_image_dict(output_folder, xml_path)
     initialize_bookmarks(output_folder)
 
-    add_xml_for_s3(xml_path, out_path)
-
-    # TODO we should also compute a foreground/background mask right away like so:
-    # - threshold the data at background value (0?) on suitable downsampled level
-    # - compute connected components and keep only the largest background component
-
     # register this stack in versions.json
     add_version(dataset_name, ROOT)
+    print("You also need to add the files in", output_folder, "to git")
 
 
 # infer resolution if it was set to None

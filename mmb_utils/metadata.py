@@ -17,7 +17,8 @@ def initialize_image_dict(folder, xml_path):
             "MaxValue": 255,
             "MinValue": 0,
             "Storage": {
-                "local": rel_path
+                "local": rel_path,
+                "remote": rel_path.replace("local", "remote")
             },
             "Type": "Image"
         }

@@ -5,16 +5,14 @@ from cluster_tools.downscaling import DownscalingWorkflow
 
 
 def export_image_stack(input_folder, out_path, tmp_folder,
-                       resolution, pattern='*.tif*',
+                       resolution, chunks, pattern='*.tif*',
                        target='local', max_jobs=16):
     task = DownscalingWorkflow
 
     config_dir = os.path.join(tmp_folder, 'configs')
     os.makedirs(config_dir, exist_ok=True)
 
-    # TODO need to determine a good block shape and good chunks
-    block_shape = [32, 2048, 2048]
-    chunks = [32, 64, 64]
+    block_shape = chunks
 
     configs = DownscalingWorkflow.get_config()
     global_conf = configs['global']
@@ -32,7 +30,7 @@ def export_image_stack(input_folder, out_path, tmp_folder,
     with open(os.path.join(config_dir, 'downscaling.config'), 'w') as f:
         json.dump(conf, f)
 
-    # TODO do we sample isotropically? need to double check with the resolution
+    # FIXME downscaling isotropically does not make sense for TEM !
     scale_factors = [[2, 2, 2]] * 6
     halos = scale_factors
     metadata_format = 'bdv.n5'

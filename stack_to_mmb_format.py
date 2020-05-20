@@ -25,7 +25,7 @@ def add_xml_for_s3(xml_path, data_path):
 
 
 # FIXME if this is called multiple times, it will replicate fields in the xml
-def stack_to_mmb(input_folder, dataset_name, resolution, target, max_jobs):
+def stack_to_mmb(input_folder, dataset_name, resolution, chunks, target, max_jobs):
     assert os.path.exists(input_folder), input_folder
 
     # @Martin, this is small, no reason to put it on scratch (where I don't have write permissions)
@@ -44,7 +44,8 @@ def stack_to_mmb(input_folder, dataset_name, resolution, target, max_jobs):
     # @julian, we could just use what you are doing to invert the bg values
     # then we could also do the inversion on the fly here
 
-    export_image_stack(input_folder, out_path, tmp_folder, resolution,
+    export_image_stack(input_folder, out_path, tmp_folder,
+                       resolution, chunks,
                        target=target, max_jobs=max_jobs)
 
     xml_path = os.path.splitext(out_path)[0] + '.xml'
@@ -85,4 +86,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     resolution = get_resolution(args.resolution, args.name)
     print("Resolution:", resolution)
-    stack_to_mmb(args.input_folder, args.name, resolution, args.target, args.max_jobs)
+    stack_to_mmb(args.input_folder, args.name, resolution, args.chunks, args.target, args.max_jobs)

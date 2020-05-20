@@ -27,7 +27,7 @@ def add_xml_for_s3(xml_path, data_path):
 def stack_to_mmb(input_folder, dataset_name, resolution, target, max_jobs):
     assert os.path.exists(input_folder), input_folder
 
-    tmp_folder = './tmp_%s' % dataset_name
+    tmp_folder = '/scratch/schorb/covid-em/TMP/tmp_%s' % dataset_name
 
     # create output folder structure
     output_folder = os.path.join(ROOT, dataset_name)

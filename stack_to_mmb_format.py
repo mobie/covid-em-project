@@ -7,6 +7,7 @@ from mmpb.files.xml_utils import write_s3_xml
 from mmb_utils import export_image_stack, initialize_image_dict, initialize_bookmarks
 
 ROOT = './data'
+DEFAULT_CHUNKS = (64, 64, 64)
 
 
 def add_xml_for_s3(xml_path, data_path):
@@ -27,7 +28,8 @@ def add_xml_for_s3(xml_path, data_path):
 def stack_to_mmb(input_folder, dataset_name, resolution, target, max_jobs):
     assert os.path.exists(input_folder), input_folder
 
-    tmp_folder = '/scratch/schorb/covid-em/TMP/tmp_%s' % dataset_name
+    # @Martin, this is small, no reason to put it on scratch (where I don't have write permissions)
+    tmp_folder = 'tmp_%s' % dataset_name
 
     # create output folder structure
     output_folder = os.path.join(ROOT, dataset_name)
@@ -76,6 +78,7 @@ if __name__ == '__main__':
     parser.add_argument('input_folder', type=str)
     parser.add_argument('name', type=str)
     parser.add_argument('--resolution', type=int, nargs=3, default=None)
+    parser.add_argument('--chunks', type=int, nargs=3, default=DEFAULT_CHUNKS)
     parser.add_argument('--target', type=str, default='local')
     parser.add_argument('--max_jobs', type=int, default=16)
 

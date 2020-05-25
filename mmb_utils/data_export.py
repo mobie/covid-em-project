@@ -6,7 +6,7 @@ from cluster_tools.downscaling import DownscalingWorkflow
 
 def export_image_stack(input_folder, out_path, tmp_folder,
                        resolution, chunks, pattern='*.tif*',
-                       target='local', max_jobs=16):
+                       target='local', max_jobs=16, time_limit=None):
     task = DownscalingWorkflow
 
     config_dir = os.path.join(tmp_folder, 'configs')
@@ -22,11 +22,15 @@ def export_image_stack(input_folder, out_path, tmp_folder,
 
     conf = configs['copy_volume']
     conf.update({'chunks': chunks})
+    if time_limit is not None:
+        conf.update({'time_limit': time_limit})
     with open(os.path.join(config_dir, 'copy_volume.config'), 'w') as f:
         json.dump(conf, f)
 
     conf = configs['downscaling']
     conf.update({'chunks': chunks})
+    if time_limit is not None:
+        conf.update({'time_limit': time_limit})
     with open(os.path.join(config_dir, 'downscaling.config'), 'w') as f:
         json.dump(conf, f)
 

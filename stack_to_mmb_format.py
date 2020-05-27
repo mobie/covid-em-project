@@ -79,7 +79,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('input_folder', type=str)
     parser.add_argument('name', type=str)
-    parser.add_argument('--resolution', type=int, nargs=3, default=None)
+    parser.add_argument('--resolution', type=float, nargs=3, default=None)
     parser.add_argument('--chunks', type=int, nargs=3, default=DEFAULT_CHUNKS)
     parser.add_argument('--target', type=str, default='local')
     parser.add_argument('--max_jobs', type=int, default=16)

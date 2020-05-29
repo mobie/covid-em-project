@@ -1,12 +1,14 @@
 {
   "sbem-6dpf-1-whole-raw": {
-    "Color": "White",
-    "MaxValue": 255,
-    "MinValue": 0,
-    "Storage": {
+    "color": "white",
+    "contrastLimits": [
+      0.0,
+      255.0
+    ],
+    "storage": {
       "local": "local/sbem-6dpf-1-whole-raw.xml",
       "remote": "remote/sbem-6dpf-1-whole-raw.xml"
     },
-    "Type": "Image"
+    "type": "image"
   }
 }

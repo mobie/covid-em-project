@@ -13,14 +13,13 @@ def initialize_image_dict(folder, xml_path):
 
     image_dict = {
         raw_name: {
-            "Color": "White",
-            "MaxValue": 255,
-            "MinValue": 0,
-            "Storage": {
+            "color": "white",
+            "contrastLimits": [0., 255.],
+            "storage": {
                 "local": rel_path,
                 "remote": rel_path.replace("local", "remote")
             },
-            "Type": "Image"
+            "type": "image"
         }
     }
 
@@ -29,6 +28,26 @@ def initialize_image_dict(folder, xml_path):
 
 
 def initialize_bookmarks(folder):
-    bookmark_path = os.path.join(folder, 'misc', 'bookmarks.json')
+    bookmark_folder = os.path.join(folder, 'misc', 'bookmarks')
+    os.makedirs(bookmark_folder, exist_ok=True)
+    bookmark_path = os.path.join(bookmark_folder, 'default.json')
+
+    bkmrk = {
+        'layers': {
+            'fibsem-raw': {
+                'contrastLimits': [0., 255.]
+            }
+        }
+    }
+
     with open(bookmark_path, 'w') as f:
-        json.dump({}, f)
+        json.dump(bkmrk, f, indent=2, sort_keys=True)
+
+
+def add_dataset(name, root):
+    path = os.path.join(root, 'datasets.json')
+    with open(path) as f:
+        datasets = json.load(f)
+    datasets['datasets'].append(name)
+    with open(path, 'w') as f:
+        json.dump(datasets, f, sort_keys=True, indet=2)

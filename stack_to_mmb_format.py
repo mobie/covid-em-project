@@ -2,9 +2,9 @@ import argparse
 import os
 
 # NOTE: I will refactor this into https://github.com/platybrowser/mmb-python eventually
-from mmpb.release_helper import add_version, make_folder_structure
+from mmpb.release_helper import make_folder_structure
 from mmpb.files.xml_utils import write_s3_xml
-from mmb_utils import export_image_stack, initialize_image_dict, initialize_bookmarks
+from mmb_utils import add_dataset, export_image_stack, initialize_image_dict, initialize_bookmarks
 
 ROOT = './data'
 DEFAULT_CHUNKS = (64, 64, 64)
@@ -36,9 +36,7 @@ def stack_to_mmb(input_folder, dataset_name, resolution, chunks, target, max_job
     make_folder_structure(output_folder)
 
     # convert tif stack to bdv.n5 format
-    # NOTE: the file name still needs to be in the platy naming scheme.
-    # @Tischi and me need to update this eventually
-    out_path = os.path.join(output_folder, 'images', 'local', 'sbem-6dpf-1-whole-raw.n5')
+    out_path = os.path.join(output_folder, 'images', 'local', 'fibsem-raw.n5')
 
     # TODO we should also compute a foreground/background mask
     # @julian, we could just use what you are doing to invert the bg values
@@ -57,7 +55,7 @@ def stack_to_mmb(input_folder, dataset_name, resolution, chunks, target, max_job
     initialize_bookmarks(output_folder)
 
     # register this stack in versions.json
-    add_version(dataset_name, ROOT)
+    add_dataset(dataset_name, ROOT)
     print("You also need to add the files in", output_folder, "to git")
 
 

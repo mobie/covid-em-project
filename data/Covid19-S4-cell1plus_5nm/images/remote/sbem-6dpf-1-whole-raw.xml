@@ -11,10 +11,10 @@
       <ViewSetup>
         <id>0</id>
         <name>Setup0</name>
-        <size>6624 4236 2574</size>
+        <size>6400 2120 11199</size>
         <voxelSize>
           <unit>micrometer</unit>
-          <size>0.008 0.008 0.008</size>
+          <size>5.0 5.0 5.0</size>
         </voxelSize>
         <attributes>
           <channel>0</channel>
@@ -26,17 +26,16 @@
       <last>0</last>
     </Timepoints>
     <ImageLoader format="bdv.n5.s3">
-      <Key>Covid19-S5-mock-Cell1-2/images/local/sbem-6dpf-1-whole-raw.n5</Key>
+      <Key>Covid19-S4-cell1plus_5nm/images/local/sbem-6dpf-1-whole-raw.n5</Key>
       <SigningRegion>us-west-2</SigningRegion>
       <ServiceEndpoint>https://s3.embl.de</ServiceEndpoint>
       <BucketName>covid-fib-sem</BucketName>
-      <Authentication>Protected</Authentication>
     </ImageLoader>
   </SequenceDescription>
   <ViewRegistrations>
     <ViewRegistration setup="0" timepoint="0">
       <ViewTransform type="affine">
-        <affine>0.008 0.0 0.0 0.0 0.0 0.008 0.0 0.0 0.0 0.0 0.008 0.0</affine>
+        <affine>5.0 0.0 0.0 0.0 0.0 5.0 0.0 0.0 0.0 0.0 5.0 0.0</affine>
       </ViewTransform>
     </ViewRegistration>
   </ViewRegistrations>

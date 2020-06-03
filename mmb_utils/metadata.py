@@ -33,9 +33,11 @@ def initialize_bookmarks(folder):
     bookmark_path = os.path.join(bookmark_folder, 'default.json')
 
     bkmrk = {
-        'layers': {
-            'fibsem-raw': {
-                'contrastLimits': [0., 255.]
+        'default': {
+            'layers': {
+                'fibsem-raw': {
+                    'contrastLimits': [0., 255.]
+                }
             }
         }
     }

@@ -1,4 +1,5 @@
 {
+"default": {
   "layers": {
     "fibsem-raw": {
       "contrastLimits": [
@@ -7,4 +8,5 @@
       ]
     }
   }
+}
 }

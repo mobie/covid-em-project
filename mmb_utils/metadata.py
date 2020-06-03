@@ -50,4 +50,4 @@ def add_dataset(name, root):
         datasets = json.load(f)
     datasets['datasets'].append(name)
     with open(path, 'w') as f:
-        json.dump(datasets, f, sort_keys=True, indet=2)
+        json.dump(datasets, f, sort_keys=True, indent=2)

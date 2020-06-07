@@ -8,11 +8,10 @@ ROOT = './data'
 DEFAULT_CHUNKS = (64, 64, 64)
 
 
-def add_seg_to_dataset(input_path, dataset_name, segmentation_name,
+def add_seg_to_dataset(input_path, input_key,
+                       dataset_name, segmentation_name,
                        resolution, chunks, target, max_jobs):
 
-    # TODO what's the input key
-    input_key = ''
     scale_factors = 6 * [[2, 2, 2]]
 
     add_segmentation(input_path, input_key,
@@ -32,6 +31,7 @@ def add_seg_to_dataset(input_path, dataset_name, segmentation_name,
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('input_path', type=str)
+    parser.add_argument('input_key', type=str)
     parser.add_argument('dataset_name', type=str)
     parser.add_argument('segmentation_name', type=str)
     parser.add_argument('--resolution', type=float, nargs=3, default=None)
@@ -40,5 +40,5 @@ if __name__ == '__main__':
     parser.add_argument('--max_jobs', type=int, default=16)
 
     args = parser.parse_args()
-    add_seg_to_dataset(args.input_path, args.dataset_name, args.segmentation_name,
+    add_seg_to_dataset(args.input_path, args.input_key, args.dataset_name, args.segmentation_name,
                        args.resolution, args.chunks, args.target, args.max_jobs)

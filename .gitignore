@@ -2,3 +2,4 @@
 software/
 __pycache__/
 tmp*/
+.DS_STORE

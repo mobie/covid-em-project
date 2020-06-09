@@ -1,5 +1,5 @@
 name:
-    mmb-dev
+    covid-em-dev
 channels:
     - conda-forge
     - cpape

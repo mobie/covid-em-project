@@ -6,7 +6,7 @@ I have set up a conda environment with all necessary dependencies in `software/m
 You can activate it by running:
 ```shell
 source software/run_conda.sh
-conda activate mmb-dev
+conda activate covid-em-dev
 ```
 
 

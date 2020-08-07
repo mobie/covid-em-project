@@ -9,7 +9,7 @@
       "local": "local/s4_area2_segmentation.xml",
       "remote": "remote/s4_area2_segmentation.xml"
     },
-    "tableFolder": "../..",
+    "tableFolder": "tables/s4_area2_segmentation",
     "type": "segmentation"
   },
   "sbem-6dpf-1-whole-raw": {

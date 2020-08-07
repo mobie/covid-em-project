@@ -10,5 +10,18 @@
       "remote": "remote/fibsem-raw.xml"
     },
     "type": "image"
+  },
+  "s5_mock_segmentation": {
+    "color": "randomFromGlasbey",
+    "contrastLimits": [
+      0.0,
+      1000.0
+    ],
+    "storage": {
+      "local": "local/s5_mock_segmentation.xml",
+      "remote": "remote/s5_mock_segmentation.xml"
+    },
+    "tableFolder": "tables/s5_mock_segmentation",
+    "type": "segmentation"
   }
 }

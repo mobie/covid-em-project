@@ -1,4 +1,17 @@
 {
+  "s4_area2_segmentation": {
+    "color": "randomFromGlasbey",
+    "contrastLimits": [
+      0.0,
+      1000.0
+    ],
+    "storage": {
+      "local": "local/s4_area2_segmentation.xml",
+      "remote": "remote/s4_area2_segmentation.xml"
+    },
+    "tableFolder": "../..",
+    "type": "segmentation"
+  },
   "sbem-6dpf-1-whole-raw": {
     "color": "white",
     "contrastLimits": [

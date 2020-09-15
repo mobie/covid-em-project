@@ -12,7 +12,7 @@
     "tableFolder": "tables/s4_area2_segmentation",
     "type": "segmentation"
   },
-  "sbem-6dpf-1-whole-raw": {
+  "fibsem-raw": {
     "color": "white",
     "contrastLimits": [
       0.0,

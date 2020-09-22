@@ -4,7 +4,7 @@
     "colorByColumn": "figuresColorScheme", 
     "contrastLimits": [
       0.0,
-      1000.0
+      500.0
     ],
     "tables": ["color_scheme_fibsem"],
     "storage": {

@@ -5,6 +5,7 @@
       0.0,
       1000.0
     ],
+    "tables": ["color_scheme_fibsem"],
     "storage": {
       "local": "local/s4_area2_segmentation.xml",
       "remote": "remote/s4_area2_segmentation.xml"

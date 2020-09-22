@@ -12,11 +12,13 @@
     "type": "image"
   },
   "s5_mock_segmentation": {
-    "color": "randomFromGlasbey",
+    "color": "A-R-G-B Column",
+    "colorByColumn": "figuresColorScheme",
     "contrastLimits": [
       0.0,
       1000.0
     ],
+    "tables": ["color_scheme_fibsem"],
     "storage": {
       "local": "local/s5_mock_segmentation.xml",
       "remote": "remote/s5_mock_segmentation.xml"

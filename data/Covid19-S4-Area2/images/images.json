@@ -1,6 +1,7 @@
 {
   "s4_area2_segmentation": {
     "color": "randomFromGlasbey",
+    "colorByColumn": "Test1", 
     "contrastLimits": [
       0.0,
       1000.0

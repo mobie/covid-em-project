@@ -1,7 +1,7 @@
 {
   "s4_area2_segmentation": {
     "color": "A-R-G-B Column",
-    "colorByColumn": "morphologyColourScheme", 
+    "colorByColumn": "figuresColorScheme", 
     "contrastLimits": [
       0.0,
       1000.0

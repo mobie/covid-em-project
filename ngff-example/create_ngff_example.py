@@ -12,20 +12,22 @@ def _to_ngff(path, key, out_path, is_seg=False):
         ds = f[key]
         ds.n_threads = 8
         data = ds[:]
+    scale = (0.5,) * 3
     if is_seg:
-        kwargs = {"order": 0, "preserve_range": True}
+        kwargs = {"scale": scale, "order": 0, "preserve_range": True}
     else:
-        kwargs = {"order": 3, "preserve_range": True, "anti_aliasing_sigma": 1.}
-    write_ome_zarr(data, out_path, n_scales=3, kwargs=kwargs)
+        kwargs = {"scale": scale, "order": 3, "preserve_range": True, "anti_aliasing_sigma": 1.}
+    name = "segmentation" if is_seg else "raw"
+    write_ome_zarr(data, out_path, name=name, n_scales=3, kwargs=kwargs)
 
 
 def convert_to_ngff():
-    raw_path = '../data/Covid19-S4-Area2/images/local/sbem-6dpf-1-whole-raw.xml'
+    raw_path = '../data/Covid19-S4-Area2/images/local/sbem-6dpf-1-whole-raw.n5'
     raw_key = 'setup0/timepoint0/s3'
     out_path = './data/S4-Area2/images/raw.ome.zarr'
     _to_ngff(raw_path, raw_key, out_path)
 
-    seg_path = '../data/Covid19-S4-Area2/images/local/s4_area2_segmentation.xml'
+    seg_path = '../data/Covid19-S4-Area2/images/local/s4_area2_segmentation.n5'
     seg_key = 'setup0/timepoint0/s3'
     out_path = './data/S4-Area2/images/segmentation.ome.zarr'
     _to_ngff(seg_path, seg_key, out_path, is_seg=True)
@@ -38,8 +40,10 @@ def create_folders():
 
 def copy_table():
     in_table = '../data/Covid19-S4-Area2/tables/s4_area2_segmentation/default.csv'
-    out_table = './data/tables/segmentation/default.tsv'
-    table = pd.read_csv(in_table, sep='\t')
+    out_table = './data/S4-Area2/tables/segmentation/default.tsv'
+    table = pd.read_csv(in_table)
+    table = table[1:]
+    table.to_csv(out_table, sep='\t', index=False)
 
 
 def create_metadata():

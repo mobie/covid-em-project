@@ -1,5 +1,20 @@
 {
-  "sbem-6dpf-1-whole-raw": {
+  "s4_area2_segmentation": {
+    "color": "A-R-G-B Column",
+    "colorByColumn": "figuresColorScheme", 
+    "contrastLimits": [
+      0.0,
+      512.0
+    ],
+    "tables": ["color_scheme_fibsem"],
+    "storage": {
+      "local": "local/s4_area2_segmentation.xml",
+      "remote": "remote/s4_area2_segmentation.xml"
+    },
+    "tableFolder": "tables/s4_area2_segmentation",
+    "type": "segmentation"
+  },
+  "fibsem-raw": {
     "color": "white",
     "contrastLimits": [
       0.0,

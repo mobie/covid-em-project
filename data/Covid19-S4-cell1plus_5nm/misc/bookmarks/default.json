@@ -1,7 +1,7 @@
 {
   "default": {
     "layers": {
-      "sbem-6dpf-1-whole-raw": {
+      "fibsem-raw": {
         "contrastLimits": [
           0.0,
           255.0

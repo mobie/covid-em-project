@@ -26,11 +26,11 @@
       <last>0</last>
     </Timepoints>
     <ImageLoader format="bdv.n5.s3">
-      <Key>Covid19-S4-cell1plus_5nm/images/local/sbem-6dpf-1-whole-raw.n5</Key>
+      <Key>Covid19-S4-cell1plus_5nm/images/local/fibsem-raw.n5</Key>
       <SigningRegion>us-west-2</SigningRegion>
       <ServiceEndpoint>https://s3.embl.de</ServiceEndpoint>
       <BucketName>covid-fib-sem</BucketName>
-      <Authentication>Protected</Authentication>
+      <Authentication>Anonymous</Authentication>
     </ImageLoader>
   </SequenceDescription>
   <ViewRegistrations>

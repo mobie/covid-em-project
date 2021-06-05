@@ -5,13 +5,12 @@
       <Attributes name="channel">
         <Channel>
           <id>0</id>
-          <name>0</name>
         </Channel>
       </Attributes>
       <ViewSetup>
         <id>0</id>
         <name>Setup0</name>
-        <size>5632 3648 4413</size>
+        <size>6624 4236 2574</size>
         <voxelSize>
           <unit>micrometer</unit>
           <size>0.008 0.008 0.008</size>
@@ -26,7 +25,7 @@
       <last>0</last>
     </Timepoints>
     <ImageLoader format="bdv.n5.s3">
-      <Key>Covid19-S4-Area3/images/local/sbem-6dpf-1-whole-raw.n5</Key>
+      <Key>Covid19-S5-mock-Cell1-2/images/local/s5_mock_segmentation.n5</Key>
       <SigningRegion>us-west-2</SigningRegion>
       <ServiceEndpoint>https://s3.embl.de</ServiceEndpoint>
       <BucketName>covid-fib-sem</BucketName>

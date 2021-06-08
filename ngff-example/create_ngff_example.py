@@ -71,7 +71,7 @@ def convert_to_ngff(file_format):
     out_path = f'./data/{DS_NAME}/images/{file_format}/segmentation.ome.zarr'
     _to_ngff(seg_path, seg_key, out_path, is_seg=True)
     if file_format == 'bdv.ome.zarr':
-        _to_bdv_ome_zarr(seg_path, seg_key, out_path, 'segmentation')
+        xml_path = _to_bdv_ome_zarr(seg_path, seg_key, out_path, 'segmentation')
         sources["segmentation"] = mobie.metadata.get_segmentation_metadata(
             f"./data/{DS_NAME}", xml_path,
             table_location=f"./data/{DS_NAME}/tables/segmentation",
@@ -89,6 +89,7 @@ def convert_to_ngff(file_format):
 def create_folders(file_formats):
     mobie.metadata.create_project_metadata('./data', file_formats=file_formats)
     mobie.metadata.create_dataset_structure('./data', DS_NAME, file_formats)
+    mobie.metadata.add_dataset('./data', DS_NAME, True)
 
 
 def copy_table():
@@ -101,13 +102,9 @@ def copy_table():
     table.to_csv(out_table, sep='\t', index=False)
 
 
-def create_ngff_example(file_format='bdv.ome.zarr'):
-    assert file_format in ('bdv.ome.zarr',)
-    # TODO support the version without bdv xml
-    # assert file_format in ('bdv.ome.zarr', 'ome.zarr')
-
-    # create_folders([file_format])
-    # copy_table()
+def create_ngff_example(file_format):
+    create_folders([file_format])
+    copy_table()
     sources, views = convert_to_ngff(file_format)
     mobie.metadata.create_dataset_metadata(
         f"./data/{DS_NAME}",
@@ -116,10 +113,29 @@ def create_ngff_example(file_format='bdv.ome.zarr'):
     )
 
 
-# TODO
 def upload_example():
-    pass
+    from subprocess import run
+    bucket_name = 'i2k-2020/project-bdv-ome-zarr'
+    service_endpoint = 'https://s3.embl.de'
+    mobie.metadata.add_remote_project_metadata(
+        './data', bucket_name, service_endpoint
+    )
+
+    s3_path = f'embl/{bucket_name}/'
+    cmd = ['mc', 'cp', '-r', 'data/', s3_path]
+    print(cmd)
+    run(cmd)
+
+
+def create_example(file_format):
+    assert file_format in ('bdv.ome.zarr',)
+    # TODO support the version without bdv xml = 'ome.zarr'
+    # assert file_format in ('bdv.ome.zarr', 'ome.zarr')
+    if not os.path.exists('./data/project.json'):  # assume that everyhing has been correctly created
+        create_ngff_example(file_format)
+    upload_example()
 
 
 if __name__ == '__main__':
-    create_ngff_example()
+    file_format = 'bdv.ome.zarr'
+    create_example(file_format)

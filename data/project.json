@@ -6,5 +6,10 @@
     "Covid19-S4-cell1plus_5nm",
     "Covid19-S5-mock-Cell1-2"
   ],
-  "defaultDataset": "Covid19-S5-mock-Cell1-2"
+  "defaultDataset": "Covid19-S5-mock-Cell1-2",
+  "imageDataFormats": [
+    "bdv.n5",
+    "bdv.n5.s3"
+  ],
+  "specVersion": "0.2.0"
 }

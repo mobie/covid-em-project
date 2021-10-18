@@ -1,0 +1,56 @@
+{
+  "is2D": false,
+  "sources": {
+    "fibsem-raw": {
+      "image": {
+        "imageData": {
+          "bdv.n5": {
+            "relativePath": "images/local/fibsem-raw.xml"
+          },
+          "bdv.n5.s3": {
+            "relativePath": "images/remote/fibsem-raw.xml"
+          }
+        }
+      }
+    },
+    "s5_mock_segmentation": {
+      "segmentation": {
+        "imageData": {
+          "bdv.n5": {
+            "relativePath": "images/local/s5_mock_segmentation.xml"
+          },
+          "bdv.n5.s3": {
+            "relativePath": "images/remote/s5_mock_segmentation.xml"
+          }
+        },
+        "tableData": {
+          "tsv": {
+            "relativePath": "tables/s5_mock_segmentation"
+          }
+        }
+      }
+    }
+  },
+  "views": {
+    "default": {
+      "isExclusive": true,
+      "sourceDisplays": [
+        {
+          "imageDisplay": {
+            "color": "white",
+            "contrastLimits": [
+              0.0,
+              255.0
+            ],
+            "name": "fibsem-raw",
+            "opacity": 1.0,
+            "sources": [
+              "fibsem-raw"
+            ]
+          }
+        }
+      ],
+      "uiSelectionGroup": "bookmark"
+    }
+  }
+}

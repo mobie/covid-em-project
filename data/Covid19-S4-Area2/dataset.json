@@ -142,6 +142,9 @@
             "opacity": 0.5,
             "sources": [
               "s4_area2_segmentation"
+            ],
+            "tables": [
+              "default.tsv"
             ]
           }
         }

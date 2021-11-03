@@ -125,6 +125,7 @@
               "s5_mock_segmentation"
             ],
             "tables": [
+              "default.tsv",
               "color_scheme_fibsem.tsv"
             ]
           }

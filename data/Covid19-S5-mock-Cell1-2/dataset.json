@@ -125,7 +125,7 @@
               "s5_mock_segmentation"
             ],
             "tables": [
-              "color_scheme_fibsem.csv"
+              "color_scheme_fibsem.tsv"
             ]
           }
         }

@@ -15,7 +15,7 @@ def fix_views_ds(ds):
         menu_name = "em" if stype == "image" else "segmentation"
         if ds == "Covid19-S5-mock-Cell1-2" and stype == "segmentation":
             view = mobie.metadata.get_default_view(stype, name, menu_name=menu_name,
-                                                   tables=["color_scheme_fibsem.csv"],
+                                                   tables=["color_scheme_fibsem.tsv"],
                                                    colorByColumn="figuresColorScheme",
                                                    lut="argbColumn")
         else:

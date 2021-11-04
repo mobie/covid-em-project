@@ -137,14 +137,16 @@
       "sourceDisplays": [
         {
           "segmentationDisplay": {
-            "lut": "glasbey",
+            "colorByColumn": "figuresColorScheme",
+            "lut": "argbColumn",
             "name": "s4_area2_segmentation",
             "opacity": 0.5,
             "sources": [
               "s4_area2_segmentation"
             ],
             "tables": [
-              "default.tsv"
+              "default.tsv",
+              "color_scheme_fibsem.tsv"
             ]
           }
         }

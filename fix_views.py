@@ -13,13 +13,11 @@ def fix_views_ds(ds):
     for name, source in sources.items():
         stype = list(source.keys())[0]
         menu_name = "em" if stype == "image" else "segmentation"
-        if ds == "Covid19-S5-mock-Cell1-2" and stype == "segmentation":
+        if stype == "segmentation":
             view = mobie.metadata.get_default_view(stype, name, menu_name=menu_name,
                                                    tables=["default.tsv", "color_scheme_fibsem.tsv"],
                                                    colorByColumn="figuresColorScheme",
                                                    lut="argbColumn")
-        elif ds == "Covid19-S4-Area2" and stype == "segmentation":
-            view = mobie.metadata.get_default_view(stype, name, menu_name=menu_name, tables=["default.tsv"])
         else:
             view = mobie.metadata.get_default_view(stype, name, menu_name=menu_name)
         mobie.metadata.add_view_to_dataset(ds_folder, name, view, overwrite=True)

@@ -1,5 +1,17 @@
 # covid-em
 
+Volume EM data from [Integrative imaging reveals SARS-CoV-2-induced reshaping of subcellular morphologies](https://www.sciencedirect.com/science/article/pii/S193131282030620X).
+
+## Opening the dataset in MoBIE
+
+In order to load one of the data-sets in MoBIE, you need to [install the MoBIE Fiji Plugin](https://github.com/mobie/mobie-viewer-fiji#install), select `Plugins->MoBIE->Open->Open MoBIE Project` and enter https://github.com/mobie/covid-em-project.
+To load the data on the EMBL share, use `/g/emcf/common/5792_Sars-Cov-2/covid-em/data` instead.
+
+## Reference
+
+For more details on the MoBIE and the MoBIE data format, visit https://mobie.github.io/.
+
+<!--- This is all outdated
 ## Set-up
 
 I have set up a conda environment with all necessary dependencies in `software/miniconda`.
@@ -16,14 +28,4 @@ Use the `stack_to_mmb_format.py` script to convert a folder with tiff slices int
 ```shell
 python stack_to_mmb_format.py /path/to/folder/with/tiffs name
 ```
-
-## Opening the dataset in MMB
-
-In order to load one of the data-sets in the MMB, you need to [use the CustomBrowser option](https://github.com/platybrowser/mmb-fiji#advanced-options).
-To load the data on the EMBL share, you need to give `/g/emcf/common/5792_Sars-Cov-2/covid-em/data` both for the `Image Data Location` and `Table Data Location`.
-To load the remote version, you need to give the following address: `https://git.embl.de/pape/covid-em/-/raw/master/data` AND store your S3 credentials in the correct way.
-
-
-## Reference
-
-For more details on the MMB data format, see https://github.com/platybrowser/platybrowser and https://github.com/platybrowser/mmb-python.
+-->

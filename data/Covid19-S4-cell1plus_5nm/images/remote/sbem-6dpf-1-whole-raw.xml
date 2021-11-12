@@ -10,7 +10,7 @@
       </Attributes>
       <ViewSetup>
         <id>0</id>
-        <name>Setup0</name>
+        <name>fibsem-raw</name>
         <size>6400 2120 11199</size>
         <voxelSize>
           <unit>micrometer</unit>
@@ -30,7 +30,6 @@
       <SigningRegion>us-west-2</SigningRegion>
       <ServiceEndpoint>https://s3.embl.de</ServiceEndpoint>
       <BucketName>covid-fib-sem</BucketName>
-      <Authentication>Anonymous</Authentication>
     </ImageLoader>
   </SequenceDescription>
   <ViewRegistrations>

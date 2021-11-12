@@ -12,7 +12,7 @@
       </Attributes>
       <ViewSetup>
         <id>0</id>
-        <name>Setup0</name>
+        <name>s4_area2_segmentation</name>
         <size>3865 3145 4825</size>
         <voxelSize>
           <unit>micrometer</unit>

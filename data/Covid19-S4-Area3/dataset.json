@@ -1,0 +1,59 @@
+{
+  "is2D": false,
+  "sources": {
+    "fibsem-raw": {
+      "image": {
+        "imageData": {
+          "bdv.n5": {
+            "relativePath": "images/local/sbem-6dpf-1-whole-raw.xml"
+          },
+          "bdv.n5.s3": {
+            "relativePath": "images/remote/sbem-6dpf-1-whole-raw.xml"
+          }
+        }
+      }
+    }
+  },
+  "views": {
+    "default": {
+      "isExclusive": true,
+      "sourceDisplays": [
+        {
+          "imageDisplay": {
+            "color": "white",
+            "contrastLimits": [
+              0.0,
+              255.0
+            ],
+            "name": "fibsem-raw",
+            "opacity": 1.0,
+            "sources": [
+              "fibsem-raw"
+            ]
+          }
+        }
+      ],
+      "uiSelectionGroup": "bookmark"
+    },
+    "fibsem-raw": {
+      "isExclusive": false,
+      "sourceDisplays": [
+        {
+          "imageDisplay": {
+            "color": "white",
+            "contrastLimits": [
+              0.0,
+              255.0
+            ],
+            "name": "fibsem-raw",
+            "opacity": 1.0,
+            "sources": [
+              "fibsem-raw"
+            ]
+          }
+        }
+      ],
+      "uiSelectionGroup": "em"
+    }
+  }
+}

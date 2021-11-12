@@ -13,7 +13,7 @@
       </Attributes>
       <ViewSetup>
         <id>0</id>
-        <name>Setup0</name>
+        <name>fibsem-raw</name>
         <size>4488 2056 1714</size>
         <voxelSize>
           <unit>micrometer</unit>

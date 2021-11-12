@@ -1,0 +1,157 @@
+{
+  "is2D": false,
+  "sources": {
+    "fibsem-raw": {
+      "image": {
+        "imageData": {
+          "bdv.n5": {
+            "relativePath": "images/local/sbem-6dpf-1-whole-raw.xml"
+          },
+          "bdv.n5.s3": {
+            "relativePath": "images/remote/sbem-6dpf-1-whole-raw.xml"
+          }
+        }
+      }
+    },
+    "s4_area2_segmentation": {
+      "segmentation": {
+        "imageData": {
+          "bdv.n5": {
+            "relativePath": "images/local/s4_area2_segmentation.xml"
+          },
+          "bdv.n5.s3": {
+            "relativePath": "images/remote/s4_area2_segmentation.xml"
+          }
+        },
+        "tableData": {
+          "tsv": {
+            "relativePath": "tables/s4_area2_segmentation"
+          }
+        }
+      }
+    }
+  },
+  "views": {
+    "FIG 2A and B": {
+      "isExclusive": false,
+      "uiSelectionGroup": "bookmark",
+      "viewerTransform": {
+        "normalizedAffine": [
+          -0.04463954342853257,
+          -7.743726394236165e-20,
+          2.5554297100979344e-18,
+          0.830599741217626,
+          -7.743726394236165e-20,
+          -0.04463954342853257,
+          -2.419914498198804e-21,
+          0.5300124884466202,
+          2.5554297100979344e-18,
+          -2.4199144981987994e-21,
+          0.04463954342853257,
+          -0.9254634611190576
+        ]
+      }
+    },
+    "FIG 2D": {
+      "isExclusive": false,
+      "uiSelectionGroup": "bookmark",
+      "viewerTransform": {
+        "normalizedAffine": [
+          -0.41084668203095515,
+          -0.0,
+          2.280657229908085e-17,
+          6.433427330486649,
+          0.0,
+          -0.41084668203095515,
+          0.0,
+          2.053775659706103,
+          2.280657229908085e-17,
+          0.0,
+          0.41084668203095515,
+          -8.44473005573468
+        ]
+      }
+    },
+    "FIG S1A (II)": {
+      "isExclusive": false,
+      "uiSelectionGroup": "bookmark",
+      "viewerTransform": {
+        "normalizedAffine": [
+          -0.3626964976400663,
+          0.0,
+          2.0133700131545267e-17,
+          5.267368586376598,
+          0.0,
+          -0.3626964976400663,
+          0.0,
+          7.240613793088176,
+          2.0133700131545267e-17,
+          0.0,
+          0.3626964976400663,
+          -7.47369541546877
+        ]
+      }
+    },
+    "default": {
+      "isExclusive": true,
+      "sourceDisplays": [
+        {
+          "imageDisplay": {
+            "color": "white",
+            "contrastLimits": [
+              0.0,
+              255.0
+            ],
+            "name": "fibsem-raw",
+            "opacity": 1.0,
+            "sources": [
+              "fibsem-raw"
+            ]
+          }
+        }
+      ],
+      "uiSelectionGroup": "bookmark"
+    },
+    "fibsem-raw": {
+      "isExclusive": false,
+      "sourceDisplays": [
+        {
+          "imageDisplay": {
+            "color": "white",
+            "contrastLimits": [
+              0.0,
+              255.0
+            ],
+            "name": "fibsem-raw",
+            "opacity": 1.0,
+            "sources": [
+              "fibsem-raw"
+            ]
+          }
+        }
+      ],
+      "uiSelectionGroup": "em"
+    },
+    "s4_area2_segmentation": {
+      "isExclusive": false,
+      "sourceDisplays": [
+        {
+          "segmentationDisplay": {
+            "colorByColumn": "figuresColorScheme",
+            "lut": "argbColumn",
+            "name": "s4_area2_segmentation",
+            "opacity": 0.5,
+            "sources": [
+              "s4_area2_segmentation"
+            ],
+            "tables": [
+              "default.tsv",
+              "color_scheme_fibsem.tsv"
+            ]
+          }
+        }
+      ],
+      "uiSelectionGroup": "segmentation"
+    }
+  }
+}

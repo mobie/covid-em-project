@@ -2,7 +2,7 @@
 
 Volume EM data from [Integrative imaging reveals SARS-CoV-2-induced reshaping of subcellular morphologies](https://www.sciencedirect.com/science/article/pii/S193131282030620X).
 
-## Opening the dataset in MoBIE
+## Opening the project in MoBIE
 
 In order to load one of the data-sets in MoBIE, you need to [install the MoBIE Fiji Plugin](https://github.com/mobie/mobie-viewer-fiji#install).
 You can then open the project via:

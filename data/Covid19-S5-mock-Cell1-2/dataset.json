@@ -117,16 +117,15 @@
       "sourceDisplays": [
         {
           "segmentationDisplay": {
+            "additionalTables": [
+              "color_scheme_fibsem.tsv"
+            ],
             "colorByColumn": "figuresColorScheme",
             "lut": "argbColumn",
             "name": "s5_mock_segmentation",
             "opacity": 0.5,
             "sources": [
               "s5_mock_segmentation"
-            ],
-            "tables": [
-              "default.tsv",
-              "color_scheme_fibsem.tsv"
             ]
           }
         }

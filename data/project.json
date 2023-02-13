@@ -7,5 +7,9 @@
     "Covid19-S5-mock-Cell1-2"
   ],
   "defaultDataset": "Covid19-S5-mock-Cell1-2",
+  "description": "Cortese et al. (2020) Covid FIB-SEM, Cell Host & Microbe",
+  "references": [
+    "https://onlinelibrary.wiley.com/doi/full/10.1002/bies.202000257"
+  ],
   "specVersion": "0.3.0"
 }
